@@ -10,12 +10,11 @@ A Random Forest classifier is trained on combined CIC-IDS2017 and CIC-IDS2018 da
 
 ## Repository Structure
 
-├── Model_Trainer.py # Training script for RF classifier
-├── Model_Tester.py # Evaluation script for test files
-├── rf_model.joblib # Saved trained model (optional)
-├── rf_features.csv # Ordered features used by the model
-├── results/ # Evaluation results, figures, reports
-└── README.md # Project documentatione
+- Model_Trainer.py # Training script for RF classifier
+- Model_Tester.py # Evaluation script for test files
+- rf_model.joblib # Saved trained model (optional)
+- rf_features.csv # Ordered features used by the model
+- README.md # Project documentatione
 
 ---
 
@@ -54,22 +53,13 @@ Python 3.10+
 ### Install dependencies
 pip install -r requirements.txt
 
-If a requirements file is not included, install manually:
-pip install pandas numpy scikit-learn matplotlib seaborn joblib imbalanced-learn
-
 ---
 
 ## Training the Model
 
 Example usage:
 
-python train_random_forest.py
---data2017 path/to/CIC-IDS2017
---data2018 path/to/CIC-IDS2018
---modelfile rf_model.joblib
---featuresfile rf_features.csv
---metricsfile rf_metrics.csv
---use_smote
+python Model_Trainer.py --data2017 path/to/CIC-IDS2017 --data2018 path/to/CIC-IDS2018 --modelfile rf_model.joblib --featuresfile rf_features.csv --metricsfile rf_metrics.csv --use_smote
 
 Outputs include:
 - `rf_model.joblib`
@@ -82,11 +72,7 @@ Outputs include:
 
 Example usage:
 
-python evaluate_model.py
---modelfile rf_model.joblib
---featuresfile rf_features.csv
---testfile Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv
---year 2018
+python Model_Tester.py --modelfile rf_model.joblib --featuresfile rf_features.csv --testfile Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv --year 2018
 
 Outputs:
 - Classification report
@@ -126,4 +112,5 @@ Key findings:
 
 ## License
 This project is intended for academic and research purposes. Refer to dataset owners for licensing details.
+
 
