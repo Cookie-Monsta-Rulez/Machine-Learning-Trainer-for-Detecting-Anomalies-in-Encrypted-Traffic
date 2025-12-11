@@ -51,16 +51,21 @@ A Random Forest classifier is trained on combined CIC-IDS2017 and CIC-IDS2018 da
 Python 3.10+
 
 ### Install dependencies
+```
+git clone https://github.com/Cookie-Monsta-Rulez/Machine-Learning-Trainer-for-Detecting-Anomalies-in-Encrypted-Traffic.git
+cd Machine-Learning-Trainer-for-Detecting-Anomalies-in-Encrypted-Traffic
+python -m virtualenv venv
+.\venv\scripts\activate
 pip install -r requirements.txt
-
+```
 ---
 
 ## Training the Model
 
 Example usage:
-
+```
 python Model_Trainer.py --data2017 path/to/CIC-IDS2017 --data2018 path/to/CIC-IDS2018 --modelfile rf_model.joblib --featuresfile rf_features.csv --metricsfile rf_metrics.csv --use_smote
-
+```
 Outputs include:
 - `rf_model.joblib`
 - `rf_features.csv`
@@ -71,9 +76,9 @@ Outputs include:
 ## Evaluating the Model
 
 Example usage:
-
+```
 python Model_Tester.py --modelfile rf_model.joblib --featuresfile rf_features.csv --testfile Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv --year 2018
-
+```
 Outputs:
 - Classification report
 - Confusion matrix heatmap
@@ -112,5 +117,6 @@ Key findings:
 
 ## License
 This project is intended for academic and research purposes. Refer to dataset owners for licensing details.
+
 
 
